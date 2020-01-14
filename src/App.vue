@@ -1,0 +1,44 @@
+<template>
+  <div id="app">
+    <Header msg="All WeArePublic events at one place! 🚀" />
+    <EventGrid v-bind:events="events" />
+  </div>
+</template>
+
+<script>
+  import Header from './components/Header'
+  import EventGrid from './components/EventGrid.vue'
+  import data from './data.json'
+  import {
+    parseData
+  } from './helpers'
+  
+  export default {
+    name: 'app',
+    data: function() {
+      return {
+        data
+      }
+    },
+    computed: {
+      events: function() {
+        return parseData(data)
+      }
+    },
+    components: {
+      Header,
+      EventGrid
+    }
+  }
+</script>
+
+<style>
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
+</style>
