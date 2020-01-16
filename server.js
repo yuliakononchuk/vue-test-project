@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'))
 })
 
-app.listen(8080)
+app.listen(process.env.PORT || 8080)
 
 const puppeteer = require('puppeteer');
 const fs = require('fs');
