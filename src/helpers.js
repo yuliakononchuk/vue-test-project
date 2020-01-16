@@ -1,17 +1,17 @@
 import { months } from './constants';
 
 export function parseData(data) {
-  return data.data
-    .filter(event => event && event.location !== 'Bij je thuis')
-    .map(parseEvent)
+    return data
+        .filter(event => event && event.location !== 'Bij je thuis')
+        .map(parseEvent)
 }
 
 function parseEvent(event) {
     let [venue, city] = event.location.split(',').map(item => item.trim())
-    if (!city) { city = venue.substring(venue.lastIndexOf(" ")).trim()}
+    if (!city) { city = venue.substring(venue.lastIndexOf(" ")).trim() }
     const dateText = event.date.split('Zet')[0];
     const date = parseDateFromText(event.date);
-    return {...event, city, venue, date, dateText}
+    return { ...event, city, venue, date, dateText }
 }
 
 function parseDateFromText(dateText) {
