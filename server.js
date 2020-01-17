@@ -72,7 +72,7 @@ const getEvents = async () => {
   }
 };
 
-schedule.scheduleJob("40 * * * *", function () {
+schedule.scheduleJob("06 * * *", function () {
   console.log("Fetching started!");
   getEvents();
 })

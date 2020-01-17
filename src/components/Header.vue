@@ -13,7 +13,9 @@ export default {
 
 <style scoped>
 h1 {
-  margin: 40px;
-  color: #0D1B46;
+  font-family: 'Gochi Hand', cursive;
+  padding: 20px;
+  color: #303030;
+  font-size: 40px;
 }
 </style>

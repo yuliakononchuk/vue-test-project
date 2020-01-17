@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header msg="All WeArePublic events at one place! 🚀" />
+    <Header msg="Finally a digestible list of WeArePublic events!" />
     <EventGrid v-bind:events="events" />
   </div>
 </template>
@@ -36,12 +36,22 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand|IBM+Plex+Sans|Nunito+Sans|Rubik|Work+Sans&display=swap');
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Rubik', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #c5dcd7;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  background-color: #c5dcd7;
 }
 </style>

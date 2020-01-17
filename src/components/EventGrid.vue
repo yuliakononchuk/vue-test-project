@@ -91,23 +91,22 @@ export default {
 
 <style>
 table {
-  border: 2px solid #0d1b46;
-  border-radius: 3px;
-  background-color: #fff;
+  background-color: #c5dcd7;
 }
 
-th {
-  background-color: #0d1b46;
-  color: #ece3e2;
+th, th svg {
+  background-color: #303030;
+  color: #dcccc5;
+  font-size: 13px;
 }
 
 .sortable {
   cursor: pointer;
 }
 
-td {
-  background-color: #ece3e2;
-  color: #0d1b46;
+td, td a, td svg {
+  background-color: #303030;
+  font-size: 14px;
 }
 
 th,
@@ -122,6 +121,6 @@ a:visited,
 a:hover,
 a:active {
   text-decoration: none;
-  color: #0d1b46;
+  color: #c5dcd7;
 }
 </style>
