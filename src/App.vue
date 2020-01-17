@@ -42,7 +42,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #c5dcd7;
+  color: white;
 }
 * {
   margin: 0;
@@ -52,6 +52,6 @@ export default {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
-  background-color: #c5dcd7;
+  background-color: #FFEE90;
 }
 </style>

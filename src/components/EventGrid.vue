@@ -90,9 +90,6 @@ export default {
 </script>
 
 <style>
-table {
-  background-color: #c5dcd7;
-}
 
 th, th svg {
   background-color: #303030;
@@ -121,6 +118,6 @@ a:visited,
 a:hover,
 a:active {
   text-decoration: none;
-  color: #c5dcd7;
+  color: white;
 }
 </style>

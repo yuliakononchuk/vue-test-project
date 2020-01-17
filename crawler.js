@@ -1,9 +1,17 @@
 
-const puppeteer = require('puppeteer');
+const chrome = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer-core');
 const fs = require('fs');
 
 const getEvents = async () => {
-  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] })
+  console.warn('path: ', chrome.executablePath, 'headless: ', chrome.headless);
+
+  const browser = await puppeteer.launch({
+    args: chrome.args,
+    executablePath: await chrome.executablePath,
+    headless: chrome.headless,
+});
+
   const page = await browser.newPage()
   try {
     await page.goto('https://www.wearepublic.nl/programma/?region=amsterdam-stad&region=haarlem&region=noord-holland&region=den-haag&region=delft&region=leiden&region=zuid-holland&genre=false&search=')
