@@ -5,7 +5,11 @@ const fs = require('fs');
 const getEvents = async () => {
   const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] })
   const page = await browser.newPage()
-  await page.goto('https://www.wearepublic.nl/programma/?region=amsterdam-stad&region=haarlem&region=noord-holland&region=den-haag&region=delft&region=leiden&region=zuid-holland&genre=false&search=')
+  try {
+    await page.goto('https://www.wearepublic.nl/programma/?region=amsterdam-stad&region=haarlem&region=noord-holland&region=den-haag&region=delft&region=leiden&region=zuid-holland&genre=false&search=')
+  } catch (e) {
+    console.log('GO TO Error:', e);
+  }
   await page.waitFor(5000);
   let prevLastElement = null;
   let currentLastElement = await page.evaluate(getLastElement);
@@ -43,7 +47,11 @@ const getEvents = async () => {
   async function getData(url) {
     const page = await browser.newPage()
     page.setDefaultTimeout(0)
-    await page.goto(url).catch(e => console.error(e));
+    try {
+        await page.goto(url)
+    } catch (e) {
+        console.log('GO TO Error - Event pages:', e);
+    }
     const data = await page.evaluate(url => ({
       url: url,
       name: document.querySelector('.section__title').innerText,
