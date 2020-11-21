@@ -1,7 +1,7 @@
 
 const chrome = require('chrome-aws-lambda');
 const puppeteer = require('puppeteer-core');
-const fs = require('fs');
+const fs = require('fs');  
 
 const getEvents = async () => {
   console.warn('path: ', chrome.executablePath, 'headless: ', chrome.headless);
